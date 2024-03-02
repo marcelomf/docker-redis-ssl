@@ -1,15 +1,15 @@
 version: "3"
 
 volumes:
-  redis:
+  redis-ssl-data:
 
 services:
-  redis:
-    image: "example/redis:v7.0.4"
+  redis-ssl:
+    build: "redis/"
     command: ["/app/docker-redis-entrypoint.sh"]
-    container_name: redis
+    container_name: redis-ssl
     ports:
       - 6379:6379
     volumes:
-      - redis:/data
+      - redis-ssl-data:/data
       - ./:/app

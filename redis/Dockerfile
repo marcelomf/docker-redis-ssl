@@ -1,2 +1,3 @@
-FROM redis:7.0.4 as base
-COPY ./redis/tls /tls
+ARG REDIS_VERSION=7.2
+FROM redis:${REDIS_VERSION} AS base
+COPY ./tls /tls

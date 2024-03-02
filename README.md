@@ -2,15 +2,14 @@
 
 ```
 # optionally create some new self signed certs
-cd redis
+pushd redis
 bash gen-redis-cert.sh
-cd ../
+popd
 
-# using the base image layer in the redis/tls cert directory
-docker build -t example/redis:v7.0.4 -f ./redis/Dockerfile ./
+export REDIS_VERSION=7.2
 
 # start redis with ssl see: docker-redis-entrypoint.sh
-docker-compose up
+docker compose up -d
 ```
 
 
@@ -36,6 +35,6 @@ redis-cli --tls --cert ./redis/tls/redis.crt \
 
 127.0.0.1:6379> info
 # Server
-redis_version:7.0.4
+redis_version:7.2
 ...
 ```
