@@ -16,4 +16,4 @@ echo "tls-cert-file /tls/redis.crt" >> redis.conf
 echo "tls-key-file /tls/redis.key" >> redis.conf
 echo "tls-ca-cert-file /tls/ca.crt" >> redis.conf
 docker compose up -d
-echo "REDIS PASSWORD: $REDIS_PASSWORD"
+echo "REDIS_PASSWORD:$REDIS_PASSWORD"
