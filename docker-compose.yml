@@ -6,7 +6,7 @@ volumes:
 services:
   redis-ssl:
     build: "redis/"
-    command: ["/app/docker-redis-entrypoint.sh"]
+    command: sh -c "redis-server /etc/redis/redis.conf"
     container_name: redis-ssl
     ports:
       - 6379:6379

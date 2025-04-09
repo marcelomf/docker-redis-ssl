@@ -1,8 +1,8 @@
 #!/bin/bash
 cd redis
 ./gen-redis-certs.sh 
-export REDIS_VERSION=6.2.14
-docker pull redis:6.2.14
+export REDIS_VERSION=7.2
+docker pull redis:7.2
 cd ..
 if [ "$(uname)" == "Darwin" ]; then
 	REDIS_PASSWORD=$(uuidgen | shasum | cut -d':' -f3 | cut -d' ' -f1) 
